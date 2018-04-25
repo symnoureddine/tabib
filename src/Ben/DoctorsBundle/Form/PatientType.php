@@ -5,8 +5,6 @@ namespace Ben\DoctorsBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class PatientType extends AbstractType
 {
@@ -17,24 +15,25 @@ class PatientType extends AbstractType
     {
         $builder->add('nom')
                 ->add('prenom')
-                ->add('dateNaissance', DateType::class, array('widget' => 'single_text'))
+                ->add('dateNaissance')
                 ->add('cin')
                 ->add('age')
-                ->add('sexe', ChoiceType::class,array(
-                    'choices' => array(
-                        'Féminin' => 'Féminin',
-                        'Masculin' => 'Masculin'
-                        ),
-                    'required' => false,
-                    ))
+                ->add('sexe')
                 ->add('telephone')
                 ->add('email')
                 ->add('adresse')
                 ->add('city')
-                ->add('ville');
-    }
-    
-    /**
+                ->add('villeNaissance')
+                ->add('etablissement')
+                ->add('gsm')
+                ->add('parentName')
+                ->add('parentAddress')
+                ->add('parentGsm')
+                ->add('parentFixe')
+                ->add('ishandicap')
+                ->add('handicap')
+                ->add('created');
+    }/**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)

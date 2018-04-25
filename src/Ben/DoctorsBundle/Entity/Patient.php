@@ -100,6 +100,62 @@ class Patient
     private $villeNaissance;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="etablissement", type="string", length=255, nullable=true)
+     */
+    private $etablissement;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="gsm", type="string", length=255, nullable=true)
+     */
+    private $gsm;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="parent_name", type="string", length=255, nullable=true)
+     */
+    private $parentName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="parent_address", type="string", length=255, nullable=true)
+     */
+    private $parentAddress;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="parent_gsm", type="string", length=255, nullable=true)
+     */
+    private $parentGsm;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="parent_fixe", type="string", length=255, nullable=true)
+     */
+    private $parentFixe;
+
+    /**
+     * @var boolean
+     * @ORM\Column(name="ishandicap", type="boolean", nullable=true)
+     *
+     */
+    private $ishandicap;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="handicap", type="string", length=255, nullable=true)
+     */
+    private $handicap;
+
+    /**
      * @var \DateTime $created
      *
      * @ORM\Column(name="created", type="datetime")
@@ -115,7 +171,6 @@ class Patient
 
     public function __construct()
     {
-        $this->villeNaissance =  new \DateTime;
         $this->created = new \DateTime;
         $this->antecedents = new \Doctrine\Common\Collections\ArrayCollection();
         $this->consultations = new \Doctrine\Common\Collections\ArrayCollection();
@@ -374,26 +429,277 @@ class Patient
     }
 
     /**
-     * Set ville
+     * Set villeNaissance
      *
-     * @param string $ville
+     * @param string $villeNaissance
      *
      * @return Patient
      */
-    public function setVille($ville)
+    public function setVilleNaissance($villeNaissance)
     {
-        $this->ville = $ville;
+        $this->villeNaissance = $villeNaissance;
 
         return $this;
     }
 
     /**
-     * Get ville
+     * Get villeNaissance
      *
      * @return string
      */
-    public function getVille()
+    public function getVilleNaissance()
     {
-        return $this->ville;
+        return $this->villeNaissance;
+    }
+
+    /**
+     * Set etablissement
+     *
+     * @param string $etablissement
+     *
+     * @return Patient
+     */
+    public function setEtablissement($etablissement)
+    {
+        $this->etablissement = $etablissement;
+
+        return $this;
+    }
+
+    /**
+     * Get etablissement
+     *
+     * @return string
+     */
+    public function getEtablissement()
+    {
+        return $this->etablissement;
+    }
+
+
+    /**
+     * Set gsm
+     *
+     * @param string $gsm
+     *
+     * @return Patient
+     */
+    public function setGsm($gsm)
+    {
+        $this->gsm = $gsm;
+
+        return $this;
+    }
+
+    /**
+     * Get gsm
+     *
+     * @return string
+     */
+    public function getGsm()
+    {
+        return $this->gsm;
+    }
+
+    /**
+     * Set parentName
+     *
+     * @param string $parentName
+     *
+     * @return Patient
+     */
+    public function setParentName($parentName)
+    {
+        $this->parentName = $parentName;
+
+        return $this;
+    }
+
+    /**
+     * Get parentName
+     *
+     * @return string
+     */
+    public function getParentName()
+    {
+        return $this->parentName;
+    }
+
+    /**
+     * Set parentAddress
+     *
+     * @param string $parentAddress
+     *
+     * @return Patient
+     */
+    public function setParentAddress($parentAddress)
+    {
+        $this->parentAddress = $parentAddress;
+
+        return $this;
+    }
+
+    /**
+     * Get parentAddress
+     *
+     * @return string
+     */
+    public function getParentAddress()
+    {
+        return $this->parentAddress;
+    }
+
+    /**
+     * Set parentGsm
+     *
+     * @param string $parentGsm
+     *
+     * @return Patient
+     */
+    public function setParentGsm($parentGsm)
+    {
+        $this->parentGsm = $parentGsm;
+
+        return $this;
+    }
+
+    /**
+     * Get parentGsm
+     *
+     * @return string
+     */
+    public function getParentGsm()
+    {
+        return $this->parentGsm;
+    }
+
+    /**
+     * Set parentFixe
+     *
+     * @param string $parentFixe
+     *
+     * @return Patient
+     */
+    public function setParentFixe($parentFixe)
+    {
+        $this->parentFixe = $parentFixe;
+
+        return $this;
+    }
+
+    /**
+     * Get parentFixe
+     *
+     * @return string
+     */
+    public function getParentFixe()
+    {
+        return $this->parentFixe;
+    }
+
+    /**
+     * Set ishandicap
+     *
+     * @param boolean $ishandicap
+     *
+     * @return Patient
+     */
+    public function setIshandicap($ishandicap)
+    {
+        $this->ishandicap = $ishandicap;
+
+        return $this;
+    }
+
+    /**
+     * Get ishandicap
+     *
+     * @return boolean
+     */
+    public function getIshandicap()
+    {
+        return $this->ishandicap;
+    }
+
+    /**
+     * Set handicap
+     *
+     * @param string $handicap
+     *
+     * @return Patient
+     */
+    public function setHandicap($handicap)
+    {
+        $this->handicap = $handicap;
+
+        return $this;
+    }
+
+    /**
+     * Get handicap
+     *
+     * @return string
+     */
+    public function getHandicap()
+    {
+        return $this->handicap;
+    }
+
+    /**
+     * Set created
+     *
+     * @param \DateTime $created
+     *
+     * @return Patient
+     */
+    public function setCreated($created)
+    {
+        $this->created = $created;
+
+        return $this;
+    }
+
+    /**
+     * Get created
+     *
+     * @return \DateTime
+     */
+    public function getCreated()
+    {
+        return $this->created;
+    }
+
+    /**
+     * Add consultation
+     *
+     * @param \Ben\DoctorsBundle\Entity\Consultation $consultation
+     *
+     * @return Patient
+     */
+    public function addConsultation(\Ben\DoctorsBundle\Entity\Consultation $consultation)
+    {
+        $this->consultations[] = $consultation;
+
+        return $this;
+    }
+
+    /**
+     * Remove consultation
+     *
+     * @param \Ben\DoctorsBundle\Entity\Consultation $consultation
+     */
+    public function removeConsultation(\Ben\DoctorsBundle\Entity\Consultation $consultation)
+    {
+        $this->consultations->removeElement($consultation);
+    }
+
+    /**
+     * Get consultations
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getConsultations()
+    {
+        return $this->consultations;
     }
 }

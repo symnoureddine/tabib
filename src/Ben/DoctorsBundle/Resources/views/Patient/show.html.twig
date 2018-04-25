@@ -29,11 +29,9 @@ Tableau de bord | {{ parent() }}
           <li class="list-group-item"><strong>Nom :</strong> {{ entity.prenom }}</li>
           <li class="list-group-item"><strong>Preom :</strong>  {{ entity.nom }} </li>
           <li class="list-group-item"><strong>CIN :</strong> {{ entity.cin }}</li>
-          <li class="list-group-item"><strong>CNE :</strong> {{ entity.dateNaissance }}</li>
           <li class="list-group-item"><strong>Sexe :</strong> {{ entity.sexe }}</li>
           <li class="list-group-item"><strong>Date de naissance :</strong> {% if entity.dateNaissance %}{{ entity.dateNaissance|date('d/m/Y') }}{% endif %}</li>
           <li class="list-group-item"><strong>Lieu de naissance :</strong> {{ entity.city }}</li>
-          <li class="list-group-item"><strong>Résident :</strong> {{ entity.resident ? 'Oui' : 'Non' }}</li>
         </ul>
     </div>
 </div>
@@ -44,14 +42,8 @@ Tableau de bord | {{ parent() }}
       </header>
       <ul class="list-group">
           <li class="list-group-item"><strong>Etablissement :</strong> {{ entity.etablissement }}</li>
-          <li class="list-group-item"><strong>Université :</strong> {{ entity.university }}</li>
-          <li class="list-group-item"><strong>Adresse :</strong> {{ entity.address }}</li>
-          <li class="list-group-item"><strong>Province :</strong> {{ entity.city }}</li>
-          <li class="list-group-item"><strong>Pay :</strong> {{ entity.contry }}</li>
           <li class="list-group-item"><strong>Tél :</strong> {{ entity.gsm }}</li>
           <li class="list-group-item"><strong>adresse email :</strong> <a href="mailto:{{ entity.email }}">{{ entity.email }}</a></li>
-          <li class="list-group-item"><strong>type de couverture sociale :</strong> {{ entity.cnsstype }}</li>
-          <li class="list-group-item"><strong>N° de couverture sociale :</strong> {{ entity.cnss }}</li>
       </ul>
     </div>
 </div>
