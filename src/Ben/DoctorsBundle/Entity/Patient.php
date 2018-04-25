@@ -95,9 +95,32 @@ class Patient
     /**
      * @var string
      *
-     * @ORM\Column(name="ville", type="string", length=255)
+     * @ORM\Column(name="ville_naissance", type="string", length=255)
      */
-    private $ville;
+    private $villeNaissance;
+
+    /**
+     * @var \DateTime $created
+     *
+     * @ORM\Column(name="created", type="datetime")
+     */
+    protected $created;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Ben\DoctorsBundle\Entity\Consultation", mappedBy="patient", cascade={"remove", "persist"})
+     */
+    protected $consultations;
+
+    /************ constructeur ************/
+
+    public function __construct()
+    {
+        $this->villeNaissance =  new \DateTime;
+        $this->created = new \DateTime;
+        $this->antecedents = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->consultations = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
 
 
     /**

@@ -22,6 +22,7 @@ class AppKernel extends Kernel
             new Ben\DoctorsBundle\BenDoctorsBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Ben\UserBundle\BenUserBundle(),
+            new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
 
         ];
 

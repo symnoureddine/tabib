@@ -77,3 +77,8 @@ fos_user:
     from_email:
         address: "noureddine.najem@gmail.com"
         sender_name: "TutoFOSUserBundle"
+# Stof\DoctrineExtensionsBundle configuration
+stof_doctrine_extensions:
+    orm:
+        default:
+            sluggable: true
