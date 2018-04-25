@@ -1,0 +1,6 @@
+ben_dashboard:
+    path:  /
+    defaults: { _controller: BenDoctorsBundle:Default:index }
+ben_stats:
+    path:  /stats
+    defaults: { _controller: BenDoctorsBundle:Default:stats }

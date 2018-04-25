@@ -1,0 +1,41 @@
+person:
+    path:     /
+    defaults: { _controller: "BenDoctorsBundle:Patient:index" }
+
+patient_ajax:
+    path:     /ajaxlist
+    defaults: { _controller: "BenDoctorsBundle:Patient:ajaxList" }
+    requirements: { _method: post }
+
+patient_show:
+    path:     /{id}/show
+    defaults: { _controller: "BenDoctorsBundle:Patient:show" }
+
+person_new:
+    path:     /new
+    defaults: { _controller: "BenDoctorsBundle:Patient:new" }
+
+person_create:
+    path:     /create
+    defaults: { _controller: "BenDoctorsBundle:Patient:create" }
+    requirements: { _method: post }
+
+patient_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BenDoctorsBundle:Patient:edit" }
+
+patient_update:
+    path:     /{id}/update
+    defaults: { _controller: "BenDoctorsBundle:Patient:update" }
+    requirements: { _method: post|put }
+
+patient_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BenDoctorsBundle:Patient:delete" }
+    requirements: { _method: post|delete }
+
+patient_remove:
+    path:     /remove
+    defaults: { _controller: "BenDoctorsBundle:Patient:remove" }
+    requirements: { _method: post|delete }
+

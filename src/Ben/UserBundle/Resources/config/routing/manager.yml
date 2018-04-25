@@ -1,0 +1,64 @@
+#admin section
+ben_users:
+    path:  /
+    defaults: { _controller: BenUserBundle:Admin:index }
+ben_users_ajax:
+    path:  /userslist
+    defaults: { _controller: BenUserBundle:Admin:ajaxList }
+    requirements: { _method: post }
+ben_show_user:
+    path:  /show/{id}
+    defaults: { _controller: BenUserBundle:Admin:show }
+ben_new_user:
+    path:  /new
+    defaults: { _controller: BenUserBundle:Admin:new }
+ben_add_user:
+    path:  /add
+    defaults: { _controller: BenUserBundle:Admin:add }
+    requirements: { _method: post }
+ben_edit_user:
+    path:  /edit/{id}
+    defaults: { _controller: BenUserBundle:Admin:edit }
+ben_update_user:
+    path:  /update/{id}
+    defaults: { _controller: BenUserBundle:Admin:update }
+    requirements: { _method: post }
+ben_users_list:
+    path:  /users/list
+    defaults: { _controller: "BenUserBundle:Admin:usersList" }
+    requirements: { _method: post }
+ben_enable_users:
+    path:  /users/active/{etat}
+    defaults: { _controller: "BenUserBundle:Admin:enableUsers" , etat: 1}
+    requirements: { _method: post }
+ben_promote_users:
+    path:  /promote/{role}
+    defaults: { _controller: "BenUserBundle:Admin:setRole" , role: user}
+    requirements: { _method: post }
+ben_delete_user:
+    path:  /delete/{id}
+    defaults: { _controller: BenUserBundle:Admin:delete }
+ben_remove_users:
+    path:  /delete
+    defaults: { _controller: "BenUserBundle:Admin:removeUsers" }
+    requirements: { _method: post }
+ben_users_export:
+    path:  /export
+    defaults: { _controller: "BenUserBundle:Admin:export" }
+
+
+ben_profile_edit:
+    path:  /me/edit/{name}
+    defaults: { _controller: "BenUserBundle:Admin:editMe" }
+ben_profile_update:
+    path:  _me/{id}/update
+    defaults: { _controller: "BenUserBundle:Admin:updateMe" }
+    requirements: { _method: post }
+
+ben_pdf:
+    path:  /pdf/{users}
+    defaults: { _controller: "BenUserBundle:Admin:pdf" }
+
+ben_badge_user:
+    path:  /badge/{users}
+    defaults: { _controller: "BenUserBundle:Admin:showBadge" }

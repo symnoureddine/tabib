@@ -1,0 +1,30 @@
+config:
+    path:  /
+    defaults: { _controller: "BenDoctorsBundle:Config:index" }
+
+config_show:
+    path:  /{id}/show
+    defaults: { _controller: "BenDoctorsBundle:Config:show" }
+
+config_new:
+    path:  /new
+    defaults: { _controller: "BenDoctorsBundle:Config:new" }
+
+config_create:
+    path:  /create
+    defaults: { _controller: "BenDoctorsBundle:Config:create" }
+    requirements: { _method: post }
+
+config_edit:
+    path:  /{id}/edit
+    defaults: { _controller: "BenDoctorsBundle:Config:edit" }
+
+config_update:
+    path:  /update
+    defaults: { _controller: "BenDoctorsBundle:Config:update" }
+    requirements: { _method: post }
+
+config_delete:
+    path:  /{id}/delete
+    defaults: { _controller: "BenDoctorsBundle:Config:delete" }
+    requirements: { _method: post }
